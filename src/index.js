@@ -1,2 +1,2 @@
-import style from './style.css';
+import style from './css/style.css';
 import print from './print.js';

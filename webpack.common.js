@@ -5,10 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'), //打包入口文件
     output: {
-        filename: '[name].js?[hash]',
-        path: path.resolve(__dirname, 'dist')
+        filename: './js/[name].js?[hash]',
+        path: path.resolve(__dirname, 'dist/'),
     }, //打包出口文件,
-    devtool: 'eval-source-map',
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({

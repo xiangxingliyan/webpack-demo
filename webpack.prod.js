@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = merge(common, {
     mode: 'production',
     optimization: {
-        minimizer: [new TerserPlugin({cache: true,parallel: true, sourceMap: true }), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
         splitChunks: {
             cacheGroups: {
                 styles: {
@@ -22,8 +22,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[hash:5].css', // 设置输出的文件名
-            chunkFilename: '[id].[hash:5].css'
+            filename: './css/[name].[hash:5].css', // 设置输出的文件名
+            chunkFilename: './css/[id].[hash:5].css'
         })
     ],
     module: {
